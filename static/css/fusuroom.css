@@ -1,0 +1,107 @@
+@media screen and (min-width: 320px) and (max-width: 1156px) {
+    .talk_con_mob {
+        width: 600px;
+        height: 500px;
+        border: 1px solid #666;
+        margin: 50px auto 0;
+        background: #f9f9f9;
+    }
+
+    .talk_show_mob {
+        width: 580px;
+        height: 420px;
+        border: 1px solid #666;
+        background: #fff;
+        margin: 10px auto 0;
+        overflow: auto;
+    }
+
+    .talk_input_mob {
+        width: 580px;
+        margin: 10px auto 0;
+    }
+
+    .talk_word_mob {
+        width: 420px;
+        height: 26px;
+        padding: 0px;
+        float: left;
+        margin-left: 10px;
+        outline: none;
+        text-indent: 10px;
+    }
+}
+
+.talkRoom {
+    width: 600px;
+    height: 500px;
+    border: 1px solid #666;
+    margin: 50px auto 0;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.talkShow {
+    width: 580px;
+    height: 420px;
+    border: 1px solid #666;
+    background: #fff;
+    margin: 10px auto 0;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.talkWord {
+    width: 580px;
+    margin: 15px auto 0;
+}
+
+.whotalk {
+    width: 80px;
+    height: 30px;
+    float: left;
+    outline: none;
+}
+
+.talkInput {
+    width: 480px;
+    height: 30px;
+    padding: 0px;
+    float: left;
+    margin-left: 0px;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 10px;
+}
+
+.send {
+    width: 56px;
+    height: 32px;
+    float: right;
+    margin-right: 10px;
+}
+
+.otherTalk {
+    margin: 10px;
+}
+
+.otherTalk span {
+    display: inline-block;
+    background: #0181cc;
+    border-radius: 10px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.myTalk {
+    margin: 10px;
+    text-align: right;
+}
+
+.myTalk span {
+    display: inline-block;
+    background: #ef8201;
+    border-radius: 10px;
+    color: #fff;
+    padding: 5px 10px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扶苏</title>
+    <!--    <link rel="stylesheet" type="text/css" href="/static/css/fusuroom.css">-->
+    <style>
+        @media screen and (min-width: 320px) and (max-width: 1156px) {
+            .talk_con_mob {
+                width: 600px;
+                height: 500px;
+                border: 1px solid #666;
+                margin: 50px auto 0;
+                background: #f9f9f9;
+            }
+
+            .talk_show_mob {
+                width: 580px;
+                height: 420px;
+                border: 1px solid #666;
+                background: #fff;
+                margin: 10px auto 0;
+                overflow: auto;
+            }
+
+            .talk_input_mob {
+                width: 580px;
+                margin: 10px auto 0;
+            }
+
+            .talk_word_mob {
+                width: 420px;
+                height: 26px;
+                padding: 0px;
+                float: left;
+                margin-left: 10px;
+                outline: none;
+                text-indent: 10px;
+            }
+        }
+
+        .talkRoom {
+            width: 600px;
+            height: 500px;
+            border: 1px solid #666;
+            margin: 50px auto 0;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .talkShow {
+            width: 580px;
+            height: 420px;
+            border: 1px solid #666;
+            background: #fff;
+            margin: 10px auto 0;
+            overflow: auto;
+            border-radius: 10px;
+        }
+
+        .talkWord {
+            width: 580px;
+            margin: 15px auto 0;
+        }
+
+        .whotalk {
+            width: 80px;
+            height: 30px;
+            float: left;
+            outline: none;
+        }
+
+        .talkInput {
+            width: 480px;
+            height: 30px;
+            padding: 0px;
+            float: left;
+            margin-left: 0px;
+            outline: none;
+            text-indent: 10px;
+            border-radius: 10px;
+        }
+
+        .send {
+            width: 56px;
+            height: 32px;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .otherTalk {
+            margin: 10px;
+        }
+
+        .otherTalk span {
+            display: inline-block;
+            background: #0181cc;
+            border-radius: 10px;
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+        .ONameTime {
+            margin: 10px;
+        }
+
+        .ONameTime span {
+            padding: 0px 5px;
+            color: rgb(109, 109, 109);
+            font-size: 14px;
+        }
+
+        .MNameTime {
+            margin: 10px;
+            text-align: right;
+        }
+
+        .MNameTime span {
+            padding: 0px 5px;
+            color: rgb(109, 109, 109);
+            font-size: 14px;
+        }
+
+        .myTalk {
+            margin: 10px;
+            text-align: right;
+        }
+
+        .myTalk span {
+            display: inline-block;
+            background: #ef8201;
+            border-radius: 10px;
+            color: #fff;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        var name = prompt("设置一个昵称吧～")
+        var Words = document.getElementById("talkShowId");
+        var Input = document.getElementById("talkInputId");
+        var Send = document.getElementById("sendButtonId");
+        var socket = new WebSocket("ws://localhost:8080/room");
+
+
+        
+        socket.onopen = function () {
+            socket.send(name)
+        }
+
+        // function InputPress() {
+        //     if (Event.keyCode === 13) {
+        //         chatRoom();
+        //     }
+        // }
+
+        Send.onclick = function () {
+            var str = "";
+            if (Input.value === "") {
+                // 消息为空时弹窗
+                alert("消息不能为空");
+                return;
+            }
+
+            var d = new Date();
+            var time = d.toLocaleTimeString();
+            str = '<div class="MNameTime"><span>' + time + '</span><span> ' + name + '</span></div>'
+            str = str + '<div class="myTalk"><span>' + Input.value + '</span></div>';
+
+            var message = {name: name, time: time, msg: Input.value}
+            console.log(message);
+            var json = JSON.stringify(message)
+            console.log(json)
+            socket.send(json);
+            Input.value = "";
+            // 将之前的内容与要发的内容拼接好提交
+            Words.innerHTML = Words.innerHTML + str;
+            Words.scrollTop = Words.scrollHeight;
+        }
+
+
+        socket.onmessage = function (e) {
+            var str = ""
+            data = JSON.parse(e.data);
+            console.log(data);
+            console.log(data.date)
+            str = '<div class="ONameTime"><span>' + data.name + '</span><span> ' + data.time + '</span></div>'
+            str = str + '<div class="otherTalk"><span>' + data.msg + '</span></div>';
+            Words.innerHTML = Words.innerHTML + str;
+            Words.scrollTop = Words.scrollHeight;
+        }
+
+        socket.onclose = function () {
+
+        }
+    };
+
+
+</script>
+<div class="talkRoom" id="talkRoomId">
+    <div class="talkShow" id="talkShowId">
+        <!-- 聊天框 -->
+    </div>
+    <div class="talkWord" id="talkWordId">
+        <input type="text" class="talkInput" id="talkInputId">
+        <input type="button" value="发送" class="send" id="sendButtonId">
+    </div>
+</div>
+</body>
+</html>

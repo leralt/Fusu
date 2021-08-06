@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link>
+    <title>Login</title>
+</head>
+<body>
+<form>
+    <input id="input" type="text"/>
+    <button onclick="send()">Send</button>
+    <pre id="output"></pre>
+    <pre id="output1">123</pre>
+</form>
+
+<script>
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    var output1 = document.getElementById("output1")
+    var socket = new WebSocket("ws://localhost:8080/echo");
+
+    socket.onopen = function () {
+        output.innerHTML += "Status: Connected\n";
+    };
+    socket.onmessage = function (e) {
+        output1.innerHTML += "Server: " + e.data + "\n";
+    };
+
+    function send() {
+        socket.send(input.value);
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
