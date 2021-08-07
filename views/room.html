@@ -158,7 +158,7 @@
         //     }
         // }
 
-        Send.onclick = function () {
+        function sendMessage(){
             var str = "";
             if (Input.value === "") {
                 // 消息为空时弹窗
@@ -181,7 +181,15 @@
             Words.innerHTML = Words.innerHTML + str;
             Words.scrollTop = Words.scrollHeight;
         }
+        Send.onclick = function () {
+            sendMessage();
+        }
 
+        Input.onkeypress = function (e) {
+            if (e.code === "Enter") {
+                sendMessage();
+            }
+        }
 
         socket.onmessage = function (e) {
             var str = ""
@@ -206,7 +214,7 @@
         <!-- 聊天框 -->
     </div>
     <div class="talkWord" id="talkWordId">
-        <input type="text" class="talkInput" id="talkInputId">
+        <input type="text" class="talkInput" id="talkInputId" >
         <input type="button" value="发送" class="send" id="sendButtonId">
     </div>
 </div>

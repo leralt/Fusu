@@ -42,6 +42,7 @@ func UserHandler(conn *websocket.Conn) {
 		Conn: conn,
 		Name: string(theName),
 	}
+
 	client.OnlineList[conn.RemoteAddr().String()] = cli
 	go SendToClient(conn, cli)
 	go func() {
