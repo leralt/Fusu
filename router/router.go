@@ -1,6 +1,7 @@
 package router
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -19,10 +20,13 @@ func Start() {
 		password := context.PostForm("password")
 		if username == "long" && password == "123" {
 			context.Redirect(http.StatusMovedPermanently, "http://localhost:8080/room")
+		}else{
+			context.Redirect(http.StatusMovedPermanently, "http://localhost:8080/")
 		}
 	})
 	err := r.Run()
 	if err != nil {
+		fmt.Println("Run error...",err)
 		return 
 	}
 }
