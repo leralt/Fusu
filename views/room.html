@@ -140,23 +140,11 @@
 <body>
 <script>
     window.onload = function () {
-        var name = prompt("设置一个昵称吧～")
         var Words = document.getElementById("talkShowId");
         var Input = document.getElementById("talkInputId");
         var Send = document.getElementById("sendButtonId");
         var socket = new WebSocket("ws://localhost:8080/room");
 
-
-        
-        socket.onopen = function () {
-            socket.send(name)
-        }
-
-        // function InputPress() {
-        //     if (Event.keyCode === 13) {
-        //         chatRoom();
-        //     }
-        // }
 
         function sendMessage(){
             var str = "";

@@ -7,7 +7,7 @@ import (
 var OnlineList map[string]Client
 
 type Message struct {
-	Name string `json:"name,omitempty"` //用户名，暂时用IP代替
+	Name string `json:"name,omitempty"` //用户名
 	Date string `json:"time"`           //发送消息的时间
 	Msg  string `json:"msg,omitempty"`  //发送的消息
 }

@@ -4,8 +4,8 @@ package ws
 import (
 	"Fusu/client"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"net/http"
 )
 
 var HistoryMsg []client.Message
@@ -16,10 +16,13 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-func EchoMessage(w http.ResponseWriter, r *http.Request) {
-	conn, _ := upgrader.Upgrade(w, r, nil) // 实际应用时记得做错误处理
+func EchoMessage(c *gin.Context) {
+	conn, err := upgrader.Upgrade(c.Writer, c.Request, nil)
+	if err != nil {
+		fmt.Println("upgrader err",err)
+		return
+	}
 	go UserHandler(conn)
-
 }
 
 //用于接收消息发送给管理者
