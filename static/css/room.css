@@ -1,5 +1,5 @@
 :root{
-    --talkroomwidth: 800px;
+    --talkroomwidth: 1000px;
 }
 @media screen and (min-width: 320px) and (max-width: 1156px) {
     .talk_con_mob {
@@ -35,25 +35,46 @@
     }
 }
 
+
 .talkRoom {
     width: var(--talkroomwidth,800px);
     height: 712px;
-    border: 1px solid #666;
-    margin: 50px auto 0;
-    background: #f9f9f9;
+    border: 0px solid rgb(164, 164, 164);
+    margin: 0px auto 0;
+    background: #f0f0f0;
     border-radius: 10px;
+    overflow: hidden;
 }
 
-.talkShow {
+.talk-area{
+    width: 800px;
+    height: 710px;
+    border: 1px solid rgb(167, 167, 167);
+    margin: 0px auto 0;
+    background: #f0f0f0;
+    float: right;
+}
+.content-talk-show{
     font-family: Poppins-Medium;
     font-size: 1em;
-    /* width: 799px;*/
+    width: 100%;
     height: 590px;
-    /* border: 1px solid #666; */
     background: #fff;
-    margin: 0px auto 0;
-    overflow: auto;
+    margin: 0px 0px 0px 0px;
     border-radius: 10px;
+    overflow: hidden;
+}
+.talkShow {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+.user-and-online {
+    float: left;
+    width: 200px;
+    height: 710px;
 }
 
 .talkWord {
@@ -69,14 +90,14 @@
 }
 
 .talkInput {
-    width: 797px;
+    width: 800px;
     height: 118px;
-    padding: 0px 0px 40px 0px;
+    padding: 0px 0px 60px 0px;
     float: left;
     outline: none;
     margin: -15px -109px;
     text-indent: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* border :1px solid #666; */
 }
 
@@ -92,6 +113,7 @@
 }
 
 .otherTalk {
+    border-radius: 10px;
     margin: 10px;
 }
 
@@ -104,6 +126,7 @@
 }
 
 .ONameTime {
+    border-radius: 10px;
     margin: 10px;
 }
 
@@ -114,6 +137,7 @@
 }
 
 .MNameTime {
+    border-radius: 10px;
     margin: 10px;
     text-align: right;
 }
@@ -125,6 +149,7 @@
 }
 
 .myTalk {
+    border-radius: 10px;
     margin: 10px;
     text-align: right;
 }
@@ -134,5 +159,59 @@
     background: #ef8201;
     border-radius: 10px;
     color: #fff;
+    padding: 5px 10px;
+}
+
+.user{
+    display:inline-block;
+    width:100%;
+    height:100px;
+    
+    box-shadow:0 0 4px #ccc;
+    overflow:hidden;
+}
+
+
+
+.header{
+    float:left;
+    width:60px;
+    height:60px;
+    margin: 15px 0px 0px 10px;
+    border-radius: 50%;
+    /* -webkit-border-radius:100px; */
+    /* -moz-border-radius:100px; */
+    border:2px solid #fff;
+    box-shadow:0 0 4px rgb(116, 116, 116);
+    overflow:hidden;
+}
+.header img{
+    width:100%;
+    min-height:100%;
+}
+.nick-introduce{
+    margin-left: 0px;
+    float:left;
+}
+
+.nick span{
+    font-size: 20px;
+    margin: 20px 0px 0px 10px;
+    display: inline-block;
+    /* background: #121212; */
+    border-radius: 10px;
+    color: rgb(9, 9, 9);
+    /* padding: 5px 10px; */
+}
+
+.introduce{
+    width: 100%;
+    height:40px;
+}
+.introduce span{
+    font-size: 13px;
+    margin: -7px 0px 0px 0px;
+    /* background: #121212; */
+    color: rgb(9, 9, 9);
     padding: 5px 10px;
 }

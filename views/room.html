@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <link rel="stylesheet" type="text/css" href="/static/css/room.css">
     <title>扶苏</title>
 </head>
+
 <body>
-<div class="limiter">
-    <div class="container-login100"
-			style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNly1gt8gin6heaj30zk0rrdgm.jpg');">
-        <div class="talkRoom" id="talkRoomId">
-            <div class="talkShow" id="talkShowId">
-                    <!-- 聊天框 -->
-            </div>
-            <div style="border:1px solid rgb(171, 170, 170)"></div>
-            <div class="talkWord" id="talkWordId">
-                <input type="text" class="talkInput" id="talkInputId" placeholder="说点什么吧～">
-                <input type="button" value="发送" class="send" id="sendButtonId">
+    <div class="limiter">
+        <div class="container-login100"
+            style="background-image: url('https://tva1.sinaimg.cn/large/008i3skNly1gt8gin6heaj30zk0rrdgm.jpg');">
+            <div class="talkRoom" id="talkRoomId">
+                <div class="user-and-online">
+                    <div class="user">
+                        <div class="header">
+                        <img src="https://tva1.sinaimg.cn/large/008i3skNly1gtc16awkjaj60u00u075n02.jpg">
+                        </div>
+                        <div class="nick-introduce">
+                            <div class="nick" id="nice">
+                                <span>扶苏</span>
+                            </div>
+                            <div class="introduce" id="introduce">
+                                <span>introduce testing</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="online-list">
+
+                    </div>
+                </div>
+                
+                <div class="talk-area">
+                    <div class="content-talk-show">
+                        <div class="talkShow" id="talkShowId">
+                            <!-- 聊天框 -->
+                            <div class="otherTalk"><span>data.msg</span></div>
+                        </div>
+                    </div>
+                    <div style="border:1px solid rgb(205, 205, 205)"></div>
+                    <div class="talkWord" id="talkWordId">
+                        <input type="text" class="talkInput" id="talkInputId" placeholder="说点什么吧～">
+                        <input type="button" value="发送" class="send" id="sendButtonId">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="/static/js/main.js"></script>
-<script src="/static/js/room.js"></script>
+    <script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/room.js"></script>
 </body>
+
 </html>
