@@ -22,7 +22,7 @@ type userRegister struct {
 	Password  string `form:"password" json:"password"`
 }
 
-var DB, _ = sql.Open("mysql","root:123456@tcp(81.68.105.24:3305)/Fusu")
+var DB, _ = sql.Open("mysql","root:456789@tcp(localhost:3306)/Fusu")
 
 func Register(c *gin.Context) {
 	var form userRegister
