@@ -1,0 +1,217 @@
+:root{
+    --talkroomwidth: 1000px;
+}
+@media screen and (min-width: 320px) and (max-width: 1156px) {
+    .talk_con_mob {
+        width: 600px;
+        height: 500px;
+        border: 1px solid #666;
+        margin: 50px auto 0;
+        background: #f9f9f9;
+    }
+
+    .talk_show_mob {
+        width: 580px;
+        height: 420px;
+        border: 1px solid #666;
+        background: #fff;
+        margin: 10px auto 0;
+        overflow: auto;
+    }
+
+    .talk_input_mob {
+        width: 580px;
+        margin: 10px auto 0;
+    }
+
+    .talk_word_mob {
+        width: 420px;
+        height: 26px;
+        padding: 0px;
+        float: left;
+        margin-left: 10px;
+        outline: none;
+        text-indent: 10px;
+    }
+}
+
+
+.talkRoom {
+    width: var(--talkroomwidth,800px);
+    height: 712px;
+    border: 0px solid rgb(164, 164, 164);
+    margin: 0px auto 0;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.talk-area{
+    width: 800px;
+    height: 710px;
+    border: 1px solid rgb(167, 167, 167);
+    margin: 0px auto 0;
+    background: #f0f0f0;
+    float: right;
+}
+.content-talk-show{
+    font-family: Poppins-Medium;
+    font-size: 1em;
+    width: 100%;
+    height: 590px;
+    background: #fff;
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.talkShow {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+.user-and-online {
+    float: left;
+    width: 200px;
+    height: 710px;
+}
+
+.talkWord {
+    width: 580px;
+    margin: 15px auto 0;
+}
+
+.whotalk {
+    width: 80px;
+    height: 30px;
+    float: left;
+    outline: none;
+}
+
+.talkInput {
+    width: 800px;
+    height: 118px;
+    padding: 0px 0px 60px 0px;
+    float: left;
+    outline: none;
+    margin: -15px -109px;
+    text-indent: 10px;
+    /* border-radius: 10px; */
+    /* border :1px solid #666; */
+}
+
+.send {
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    width: 56px;
+    height: 32px;
+    float: right;
+    margin: 60px -90px 0px 10px;
+    border-radius: 8px;
+    background-color: #feb760;
+}
+
+.otherTalk {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.otherTalk span {
+    display: inline-block;
+    background: #0181cc;
+    border-radius: 10px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.ONameTime {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.ONameTime span {
+    padding: 0px 5px;
+    color: rgb(109, 109, 109);
+    font-size: 14px;
+}
+
+.MNameTime {
+    border-radius: 10px;
+    margin: 10px;
+    text-align: right;
+}
+
+.MNameTime span {
+    padding: 0px 5px;
+    color: rgb(109, 109, 109);
+    font-size: 14px;
+}
+
+.myTalk {
+    border-radius: 10px;
+    margin: 10px;
+    text-align: right;
+}
+
+.myTalk span {
+    display: inline-block;
+    background: #ef8201;
+    border-radius: 10px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.user{
+    display:inline-block;
+    width:100%;
+    height:100px;
+    
+    box-shadow:0 0 4px #ccc;
+    overflow:hidden;
+}
+
+
+
+.header{
+    float:left;
+    width:60px;
+    height:60px;
+    margin: 15px 0px 0px 10px;
+    border-radius: 50%;
+    /* -webkit-border-radius:100px; */
+    /* -moz-border-radius:100px; */
+    border:2px solid #fff;
+    box-shadow:0 0 4px rgb(116, 116, 116);
+    overflow:hidden;
+}
+.header img{
+    width:100%;
+    min-height:100%;
+}
+.nick-introduce{
+    margin-left: 0px;
+    float:left;
+}
+
+.nick span{
+    font-size: 20px;
+    margin: 20px 0px 0px 10px;
+    display: inline-block;
+    /* background: #121212; */
+    border-radius: 10px;
+    color: rgb(9, 9, 9);
+    /* padding: 5px 10px; */
+}
+
+.introduce{
+    width: 100%;
+    height:40px;
+}
+.introduce span{
+    font-size: 13px;
+    margin: -7px 0px 0px 0px;
+    /* background: #121212; */
+    color: rgb(9, 9, 9);
+    padding: 5px 10px;
+}
